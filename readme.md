@@ -1,26 +1,33 @@
 # ical-chrome #
 
 A tolerant, minimal icalendar parser for Google Chrome
-(http://tools.ietf.org/html/rfc5545)
+
+This is a fork of [ical](https://github.com/peterbraden/ical.js) but with the
+Node Bits taken out for an easier time to compile for web.
 
 ## Install - Node.js ##
 
 ical.js is availble on npm:
 
-    npm install --save ical-chrome
+```
+npm install --save ical-chrome
+```
 
 ## API ##
 
-    ical.parseICS(str)
+```
+import ical from 'ical-chrome'
+
+ical.parseICS(str)
+```
 
 ## Example 1
 
 Print list of upcoming node conferences (see example.js)
 
 ```javascript
-'use strict';
+import ical from 'ical-chrome';
 
-const ical = require('ical');
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const data = ical.parseICS('--content from ical file--');
@@ -29,7 +36,11 @@ for (let k in data) {
   if (data.hasOwnProperty(k)) {
     var ev = data[k];
     if (data[k].type == 'VEVENT') {
-      console.log(`${ev.summary} is in ${ev.location} on the ${ev.start.getDate()} of ${months[ev.start.getMonth()]} at ${ev.start.toLocaleTimeString('en-GB')}`);
+      console.log(ev.summary)
+      console.log('located at', ev.location)
+      console.log(ev.start.getDate())
+      console.log('month', months[ev.start.getMonth()])
+      console.log('locally', ev.start.toLocaleTimeString('en-GB'))
     }
   }
 }
