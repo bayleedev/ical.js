@@ -1,5 +1,5 @@
 {
-  "name": "ical",
+  "name": "ical-chrome",
   "version": "0.8.0",
   "main": "index.js",
   "description": "A tolerant, minimal icalendar parser",
@@ -8,12 +8,12 @@
     "ics",
     "calendar"
   ],
-  "homepage": "https://github.com/peterbraden/ical.js",
+  "homepage": "https://github.com/bayleedev/ical.js",
   "author": "Peter Braden <peterbraden@peterbraden.co.uk> (peterbraden.co.uk)",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/peterbraden/ical.js.git"
+    "url": "git://github.com/bayleedev/ical.js.git"
   },
   "dependencies": {
     "rrule": "2.6.8"
